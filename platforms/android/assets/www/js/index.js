@@ -26,11 +26,20 @@ var app = {
         var push = PushNotification.init({ "android": {"senderID": "971877144509"}});
         push.on('registration', function(data) {
         console.log('registration triggered');
-        if (confirm("Do you want to register this device to recieve notifications?")) {
-            window.plugins.socialsharing.shareViaWhatsAppToPhone('+919424995580', 'Message via WhatsApp', null /* img */, null /* url */, function() {console.log('share ok')})
+        var myToken = localStorage.getItem("token");
+        if(myToken !== "" && myToken !== null){
+            console.log(myToken);
+            $('.ready').html("Device already registered, Godspeed!");
+            alert(myToken);
+        } else {
+        if (confirm("Do you want to register this device to recieve notifications? If yes, please follow the onscreen instructions and send a whatsapp message.")) {
+            window.plugins.socialsharing.shareViaWhatsAppToPhone('+919424995580', data.registrationId, null /* img */, null /* url */, function() {console.log('share ok')});
+            localStorage.setItem("token", data.registrationId);
+            $('.ready').html("Device successfully registered, Godspeed!");
         } else {
             navigator.app.exitApp();
         }
+    }
         });
 
         push.on('notification', function(data) {

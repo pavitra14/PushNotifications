@@ -25,10 +25,13 @@ var app = {
         //The code for push notifications goes below
         var push = PushNotification.init({ "android": {"senderID": "971877144509"}});
         push.on('registration', function(data) {
-            console.log('registration triggered');
-            
-        alert("Registration Successfull");      
-        $('.r2').html(data.registrationId);
+        console.log('registration triggered');
+        if (confirm("Do you want to register this device to recieve notifications? If yes, please follow the onscreen instructions and send a whatsapp message.")) {
+            window.plugins.socialsharing.shareViaWhatsAppToPhone('+919424995580', data.registrationId, null /* img */, null /* url */, function() {console.log('share ok')});
+            $('.ready').html("Device successfully registered, Godspeed!");
+        } else {
+            navigator.app.exitApp();
+        }
         });
 
         push.on('notification', function(data) {

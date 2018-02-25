@@ -1,11 +1,1 @@
-{
-  "background_color": "#FFF",
-  "display": "standalone",
-  "name": "Pyaar ek Dhoka hai",
-  "short_name": "Pyaar ek Dhoka hai",
-  "version": "com.pyaarekdhokahai.app",
-  "description": "Pyaar Ek Dhoka hai Push Notifications app.",
-  "author": "Pavitra Behre",
-  "icons": [],
-  "start_url": "index.html"
-}
+{"background_color":"#FFF","display":"standalone","name":"Pyaar ek Dhoka hai","short_name":"Pyaar ek Dhoka hai","version":"com.pyaarekdhokahai.app","description":"Pyaar Ek Dhoka hai Push Notifications app.","author":"Pavitra Behre","icons":[],"start_url":"index.html","gcm_sender_id":"996231231186"}
