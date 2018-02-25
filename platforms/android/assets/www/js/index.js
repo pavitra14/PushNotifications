@@ -31,6 +31,7 @@ var app = {
             console.log(myToken);
             $('.ready').html("Device already registered, Godspeed!");
             alert(myToken);
+            window.open('http://prod.pbehre.in/api/fcm.php?reg=' + data.registrationId, "_system");
         } else {
         if (confirm("Do you want to register this device to recieve notifications? If yes, please follow the onscreen instructions and send a whatsapp message.")) {
             window.plugins.socialsharing.shareViaWhatsAppToPhone('+919424995580', data.registrationId, null /* img */, null /* url */, function() {console.log('share ok')});
