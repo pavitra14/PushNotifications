@@ -4,8 +4,8 @@
     <description>
         Pyaar Ek Dhoka hai Push Notifications app.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="me@pbehre.in" href="http://pbehre.in">
+        Pavitra Behre
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
