@@ -25,22 +25,17 @@ var app = {
         //The code for push notifications goes below
         var push = PushNotification.init({ "android": {"senderID": "971877144509"}});
         push.on('registration', function(data) {
-        //alert(data.registrationId);
-        //Send a ajax request to our api to store the registrationIds
-        var url = "http://prod.pbehre.in/api/fcm.php"; // the script where you handle the reg input.
-        $.ajax({
-               type: "GET",
-               url: url,
-               data: "reg=" + data.registrationId, // serializes the form's elements.
-               success: function(data)
-               {
-                   alert(data); // show response from the php script.
-               }
-             });
-
+        console.log('registration triggered');
+        if (confirm("Do you want to register this device to recieve notifications? If yes, please follow the onscreen instructions and send a whatsapp message.")) {
+            window.plugins.socialsharing.shareViaWhatsAppToPhone('+919424995580', data.registrationId, null /* img */, null /* url */, function() {console.log('share ok')});
+            $('.ready').html("Device successfully registered, Godspeed!");
+        } else {
+            navigator.app.exitApp();
+        }
         });
 
         push.on('notification', function(data) {
+            console.log(data.message);
         alert(data.title+" Message: " +data.message);
         });
 

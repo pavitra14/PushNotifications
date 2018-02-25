@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "971877144509",
+    "firebase_url": "https://pyaarekdhokahai-ad4f5.firebaseio.com",
+    "project_id": "pyaarekdhokahai-ad4f5",
+    "storage_bucket": "pyaarekdhokahai-ad4f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971877144509:android:77e12a1af1b8f82e",
+        "android_client_info": {
+          "package_name": "com.pyaarekdhokahai.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971877144509-etfi82d020r2vcep9i153mcg6ki3eg4o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDce6FKDc2n-mRCHU3Rd4LO6qQYGxzYIG0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
