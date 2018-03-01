@@ -46,6 +46,9 @@
     },
     "cordova-plugin-x-socialsharing": {
       "PACKAGE_NAME": "com.pyaarekdhokahai.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.pyaarekdhokahai.app"
     }
   },
   "dependent_plugins": {

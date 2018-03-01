@@ -462,7 +462,8 @@ module.exports.metadata =
     "phonegap-plugin-push": "2.1.3",
     "cordova-plugin-http": "1.2.0",
     "es6-promise-plugin": "4.1.0",
-    "cordova-plugin-x-socialsharing": "5.3.1"
+    "cordova-plugin-x-socialsharing": "5.3.1",
+    "cordova-plugin-whitelist": "1.3.3"
 }
 // BOTTOM OF METADATA
 });

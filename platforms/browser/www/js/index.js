@@ -30,12 +30,25 @@ var app = {
         if(myToken !== "" && myToken !== null){
             console.log(myToken);
             $('.ready').html("Device already registered, Godspeed!");
-            alert(myToken);
+            //alert(AppVersion.build);
+            //alert(myToken);
+            //window.open('http://prod.pbehre.in/api/fcm.php?reg=' + data.registrationId, "_system"); //this link is only for the debug
         } else {
-        if (confirm("Do you want to register this device to recieve notifications? If yes, please follow the onscreen instructions and send a whatsapp message.")) {
-            window.plugins.socialsharing.shareViaWhatsAppToPhone('+919424995580', data.registrationId, null /* img */, null /* url */, function() {console.log('share ok')});
-            localStorage.setItem("token", data.registrationId);
-            $('.ready').html("Device successfully registered, Godspeed!");
+        if (confirm("Do you want to register this device to recieve notifications?")) {
+            //window.plugins.socialsharing.shareViaWhatsAppToPhone('+919424995580', data.registrationId, null /* img */, null /* url */, function() {console.log('share ok')});
+            var url = "http://prod.pbehre.in/api/push/fcm.php"; // the script where you handle the form input.
+        $.ajax({
+               type: "POST",
+               url: url,
+               data: "reg=" + data.registrationId, // serializes the form's elements.
+               success: function(data1)
+               {
+                   alert(data1); // show response from the php script.
+                   localStorage.setItem("token", data.registrationId);
+                    $('.ready').html("Device successfully registered, Godspeed!");
+               }
+             });
+            
         } else {
             navigator.app.exitApp();
         }
@@ -44,7 +57,7 @@ var app = {
 
         push.on('notification', function(data) {
             console.log(data.message);
-        alert(data.title+" Message: " +data.message);
+        alert(data.title+" Quote: " +data.message);
         });
 
         push.on('error', function(e) {
